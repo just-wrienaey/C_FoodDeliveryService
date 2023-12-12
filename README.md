@@ -16,7 +16,7 @@ This project involves actions by three entities:
     b. send order to chef
     c. list pending order
     d. list current customers and ordered food
-    e. send driveer to deliver food
+    e. send driver to deliver food
     f. display income for the day
     g. display dishes served for the day
     h. close the restaurant

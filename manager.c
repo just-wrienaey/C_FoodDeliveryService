@@ -1,6 +1,7 @@
 
 
 /*
+    ACTIONS: 
     • Display the Menu for the Day. Displays the menu of dishes for the day and the price.
 
     • Send Order to Chef. The ordered food from the customer are added to the list of pending order and at the same time sent to the chef. Most recent order is added last in the list.
@@ -21,30 +22,8 @@
 
 */
 
-#define MAX_CUSTOMERS 10
-#define MAX_ORDERS 3
 
-struct Order{
-    int code;
-    char name[50];
-    float price;
-    char status[20]; // cooking or packed
-};
-
-typedef struct Customer{ // typedef struct Customer = struct name 
-    char name[50];
-    char status[20];
-    int customerNum;
-    float totalBill;
-    struct Order orders[3];
-}Customer; // struct nametag (replaces "struct Customer")
-
-typedef struct Menu{
-    
-    int code;
-    char name[50];
-    float price;
-}Menu;
+#include "header.h"
 
 void displayMenu()
 {
@@ -70,13 +49,35 @@ void displayMenu()
     printf("%s%s%s%s \n", "----------", "----------", "----------", "----------");
 }
 
-void sendOrderToChef(){
+void sendOrderToChef(int currentCustomers, Customer customer[], PendingOrders pending[]){
 
-    printf("Sending order to chef. . .");
+    printf("\n\n%s%sSENDING ORDERS TO CHEF%s%s\n\n", "~~~~~~~~~~", "~~~~~~~~~~", "~~~~~~~~~~","~~~~~~~~~~");
+
+    int i, j, k=0;
+    bool found = false;
+
+    for(i=0; i<currentCustomers; i++){
+
+        for(j=0; j<MAX_ORDERS; j++){
+            if(strcmp(customer[i].orders[j].status,"Pending")==0 && strcmp(customer[i].status,"Waiting")==0){
+                printf("%d \t %s \t (customer # %d)\n", customer[i].orders[j].code, customer[i].orders[j].name, customer[i].customerNum);
+                pending[k].code = customer[i].orders[j].code;
+                strcpy(pending[k].name, customer[i].orders[j].name);
+                pending[k].customerNum = customer[i].customerNum;
+                found = true;
+            }
+
+        }
+        
+    }
+
+    if(!found)
+        printf("No orders to send at the moment");
+
 
 }
 
-void listPendingOrders(Customer customer[]){
+void listPendingOrders(int currentCustomers, Customer customer[]){
 
     //Display: order, order code, customer
     //Orders that are not prepared or cooked yet: status != cooking/packed
@@ -84,22 +85,26 @@ void listPendingOrders(Customer customer[]){
     printf("\n\n%s%sPENDING ORDERS%s%s\n\n", "~~~~~~~~~~", "~~~~~~~~~~", "~~~~~~~~~~","~~~~~~~~~~");
 
     int i, j;
+    bool found = false;
 
-    for(i=0; i<MAX_CUSTOMERS; i++){
+    for(i=0; i<currentCustomers; i++){
 
         for(j=0; j<MAX_ORDERS; j++){
-            if(strcmp(customer[i].orders[j].status,"Cooking")!=0 && (customer[i].orders[j].status,"Packed")!=0){
-                printf("%d \t %s \t (customer # %d)\n", customer[i].orders[j].code, customer[i].orders[j].name, customer[i].customerNum);
+            if(strcmp(customer[i].orders[j].status,"Packed")!=0 && customer[i].orders[j].code!=-1){
+                printf("%-10s \t %d \t %-11s \t (customer # %d)\n", customer[i].orders[j].status, customer[i].orders[j].code, customer[i].orders[j].name, customer[i].customerNum);
+                found = true;
             }
 
         }
         
     }
 
+    if(!found)
+        printf("No pending orders at the moment");
 
 }
 
-void listCurrentCustomers(Customer customer[]){
+void listCurrentCustomers(int currentCustomers, Customer customer[]){
 
     //Display: customer number (+ name), ordered food (+ order code) 
     //only current: status == booking/waiting
@@ -108,7 +113,7 @@ void listCurrentCustomers(Customer customer[]){
 
     int i, j;
 
-    for(i=0; i<MAX_CUSTOMERS; i++){
+    for(i=0; i<currentCustomers; i++){
         if(strcmp(customer[i].status, "Received Order")!=0){
             printf("Customer # %d \t Name: %s \n", customer[i].customerNum, customer[i].name);
             
@@ -126,13 +131,40 @@ void listCurrentCustomers(Customer customer[]){
 
 }
 
-void sendDriver(){
+void sendDriver(int currentCustomers, Customer customer[]){
 
-    printf("Driver sent. Delivering order. . .");
+    int i, j;
+    int orderCounter, packed;
+
+    for(i=0; i<currentCustomers; i++){
+
+        orderCounter = 0;
+        packed = 0;
+        if(strcmp(customer[i].status, "Received Order")!=0){
+            for(j=0; j<MAX_ORDERS; j++){
+
+                if(customer[i].orders[j].code!=-1){
+                    orderCounter++;
+                    if (strcmp(customer[i].orders[j].status, "Packed")==0){
+                        packed++;
+                    }
+                }
+                    
+            }
+        }
+
+        if(orderCounter == packed){
+            strcmp(customer[i].status, "Received Order");
+            printf("Driver sent. Delivering order to customer # %d . . .", customer[i].customerNum);
+        }
+
+    }
+
+    
 
 }
 
-void displayIncome(Customer customer[]){
+void displayIncome(int currentCustomers, Customer customer[]){
 
     //Display: total customers, amount paid per customer, total income
     printf("\n\n%s%sDISPLAY INCOME%s%s\n\n", "~~~~~~~~~~", "~~~~~~~~~~", "~~~~~~~~~~","~~~~~~~~~~");
@@ -145,7 +177,7 @@ void displayIncome(Customer customer[]){
     else{
 
         printf("Transaction History: \n");
-        for(i=0; i<MAX_CUSTOMERS; i++){
+        for(i=0; i<currentCustomers; i++){
             if(strcmp(customer[i].status, "Received Order")==0){
                 printf("Customer # %d \t Amount Paid: %.2f \n", customer[i].customerNum, customer[i].totalBill);
 
@@ -159,7 +191,7 @@ void displayIncome(Customer customer[]){
 
 }
 
-void displayDishesServed(Menu menu[], Customer customer[]){
+void displayDishesServed(int currentCustomers, Menu menu[], Customer customer[]){
     //Displays the number of ordered dishes for the day with code and the price per dish.
 
     int i, j, code;
@@ -168,10 +200,10 @@ void displayDishesServed(Menu menu[], Customer customer[]){
     printf("\n\n%s%sDISPLAY DISHES SERVED%s%s\n\n", "~~~~~~~~~~", "~~~~~~~~~~", "~~~~~~~~~~","~~~~~~~~~~");
 
 
-    for(i=0; i<MAX_CUSTOMERS; i++){
+    for(i=0; i<currentCustomers; i++){
 
         for(j=0; j<MAX_ORDERS; j++){
-            if(strcmp(customer[i].orders[j].status,"packed")==0){
+            if(strcmp(customer[i].orders[j].status,"Packed")==0){
 
                 code = customer[i].orders[j].code;
                 switch(code){
@@ -224,15 +256,15 @@ int closeResto(){
     return -1;
 }
 
-void managerMenu(Customer customer[], Menu menu[]){
+void managerMenu(int currentCustomers, Customer customer[], Menu menu[], PendingOrders pending[]){
 
-    printf("Good day manager!!\n\n");
+    printf("\nGood day manager!!");
 
     char opt;
 
     do{
 
-    printf("Choose an action below: \n");
+    printf("\n\nChoose an action below: \n");
     printf("[a] display menu of the day\n");
     printf("[b] send order to chef\n");
     printf("[c] list pending orders\n");
@@ -251,22 +283,22 @@ void managerMenu(Customer customer[], Menu menu[]){
             displayMenu();
             break;
         case 'b':
-            sendOrderToChef();
+            sendOrderToChef(currentCustomers, customer, pending);
             break;
         case 'c':
-            listPendingOrders(customer);
+            listPendingOrders(currentCustomers, customer);
             break;
         case 'd':
-            listCurrentCustomers(customer);
+            listCurrentCustomers(currentCustomers, customer);
             break;
         case 'e':
-            sendDriver();
+            sendDriver(currentCustomers, customer);
             break;
         case 'f':
-            displayIncome(customer);
+            displayIncome(currentCustomers, customer);
             break;
         case 'g':
-            displayDishesServed(menu, customer);
+            displayDishesServed(currentCustomers, menu, customer);
             break;
         case 'h':
             closeResto();

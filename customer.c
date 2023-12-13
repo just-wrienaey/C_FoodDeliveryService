@@ -1,9 +1,6 @@
 
-#include <stdio.h>
-#include <stdbool.h>
-#include <string.h>
 
-#include "manager.c"
+
 
 /*
 
@@ -23,6 +20,8 @@
         "received order" - when order is received & delivered
 
 */
+
+#include "chef.c"
 
 int isOrderValid(Menu menu[], int orderCode){
     int i;
@@ -103,8 +102,10 @@ void order(Menu menu[], int customerNum, Customer customer[]){
     } while (valid);
     
     int i;
+    customer[customerNum].totalBill = 0;
     for(i=0; i<MAX_ORDERS; i++){
         if( orderIndices[i] != -1){
+            strcpy(customer[customerNum].orders[i].status, "Pending");
             customer[customerNum].orders[i].code = menu[orderIndices[i]].code;
             customer[customerNum].orders[i].price = menu[orderIndices[i]].price;
             strcpy(customer[customerNum].orders[i].name, menu[orderIndices[i]].name );
@@ -139,7 +140,7 @@ void pay(Customer customer[], int currentCustomers){
             printf("You have already paid.");
         else{
 
-            printf("Your total bill is %f\n\n", customer[custNum].totalBill);
+            printf("Your total bill is %.2f\n\n", customer[custNum].totalBill);
 
             do{
 
@@ -231,31 +232,17 @@ void displayCustomerNum(Customer customer[]){
 
 }
 
-void customerMenu(Customer customer[], Menu menu[]){
+int customerMenu(int currentCustomers, Customer customer[], Menu menu[]){
 
+    printf("\nGood day customer!!");
 
-    int i, j;
-
-    for(i=0; i<MAX_CUSTOMERS; i++){
-        customer[i].customerNum = -1;
-        customer[i].totalBill = -1;
-
-        for(j=0; j<MAX_ORDERS; j++){
-            customer[i].orders[j].code = -1;
-            customer[i].orders[j].price = -1;
-        }
-  
-    }
-
-    printf("Good day customer!!\n\n");
-
+    int i;
     char opt;
-    int currentCustomers = 0, delivered = 0;
     int pending;
 
     do{
         
-        printf("\nChoose an action below: \n");
+        printf("\n\nChoose an action below: \n");
         printf("[a] order\n");
         printf("[b] pay\n");
         printf("[c] display customer number\n");
@@ -264,7 +251,10 @@ void customerMenu(Customer customer[], Menu menu[]){
 
         scanf(" %c", &opt);
 
-        pending = currentCustomers - delivered;
+        pending = 0;
+        for(i=0; i<currentCustomers; i++)
+            if((customer[i].status,"Order Received")!=0)
+                pending++;
 
         switch(opt){
             case 'a':
@@ -295,5 +285,7 @@ void customerMenu(Customer customer[], Menu menu[]){
         }
 
     }while(opt != 'e');
+
+    return currentCustomers;
 
 }

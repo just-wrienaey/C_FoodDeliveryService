@@ -1,0 +1,14 @@
+//BUG: INCORRECT ORDER STATUS (FIXED)
+    //BUG: MISSING INCOME (FIXED)
+    //BUG: SEND TO CHEF: RECURRING ORDERS  (FIXED)
+    //cause: unmatched strings
+
+//BUG: PENDING COUNTER(FIXED)
+    //cause: INCORRECT function call; missing function name
+
+//BUG: DISPLAY SERVED DISHES
+    //cause: if(strcmp(customer[i].status,"Received Order")) 
+    // CONDITION INCOMPLETE
+    //cause: unmatched strings "Packed" vs "Delivered"
+
+**recommendation: include filename and line number in this "Bug Log"

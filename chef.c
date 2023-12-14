@@ -24,13 +24,13 @@ void receiveOrder(Customer customer[], PendingOrders pending[]){
         while(pending[i].customerNum!=-1){
 
             if(pending[i].code!=0){
-                printf("Preparing %s for customer # %d. . .", pending[i].name, customer[pending[i].customerNum-1].customerNum);
+                printf("Preparing %s for customer # %d. . .\n", pending[i].name, customer[pending[i].customerNum-1].customerNum);
                 found = true;
 
                 for(j=0; j<MAX_ORDERS; j++){
                     
                     if(found==true)
-                        if (customer[pending[i].customerNum-1].orders[j].code == pending[i].code && strcmp(customer[pending[i].customerNum-1].orders[j].status, "Pending")==0){
+                        if (customer[pending[i].customerNum-1].orders[j].code == pending[i].code && strcmp(customer[pending[i].customerNum-1].orders[j].status, "Sent to chef")==0){
                             strcpy(customer[pending[i].customerNum-1].orders[j].status, "Preparing");
                             found = true;
                         }
@@ -64,7 +64,7 @@ int cook(int currentCustomers, Customer customer[]){
             for(j=0; j<MAX_ORDERS; j++){
                 if(strcmp(customer[i].orders[j].status,"Preparing") == 0){
                     strcpy(customer[i].orders[j].status,"Cooking");
-                    printf("Cooking %s for customer # %d. . .", customer[i].orders[j].name, customer[i].customerNum);
+                    printf("Cooking %s for customer # %d. . .\n", customer[i].orders[j].name, customer[i].customerNum);
                     n--;
 
                     if(n==0){
@@ -94,9 +94,9 @@ void packOrder(int currentCustomers, Customer customer[]){
 
             for(j=0; j<MAX_ORDERS; j++){
                 if(strcmp(customer[i].orders[j].status,"Cooking") == 0){
-                    strcpy(customer[i].orders[j].status,"Packing");
+                    strcpy(customer[i].orders[j].status,"Packed");
                     strcpy(customer[i].status,"Order is on the way!");
-                    printf("Packing %s for customer # %d. . .", customer[i].orders[j].name, customer[i].customerNum);
+                    printf("Packing %s for customer # %d. . .\n", customer[i].orders[j].name, customer[i].customerNum);
 
                 }
             }
@@ -136,10 +136,10 @@ void chefMenu(int currentCustomers, Customer customer[], PendingOrders pending[]
                 packOrder(currentCustomers, customer);
                 break;
             case 'd':
-                printf("Returning to main menu. . .");
+                printf("Returning to main menu. . .\n");
                 break;
             default:
-                printf("Invalid input. Please try again.");
+                printf("Invalid input. Please try again.\n");
         }
 
     }while(opt != 'd');

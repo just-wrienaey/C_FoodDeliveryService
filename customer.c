@@ -232,7 +232,7 @@ void displayCustomerNum(Customer customer[]){
 
 }
 
-int customerMenu(int currentCustomers, Customer customer[], Menu menu[]){
+int customerMenu(bool closed, int currentCustomers, Customer customer[], Menu menu[]){
 
     printf("\nGood day customer!!");
 
@@ -251,22 +251,34 @@ int customerMenu(int currentCustomers, Customer customer[], Menu menu[]){
 
         scanf(" %c", &opt);
 
-        pending = 0;
+        // printf("\nPENDING COUNTER\n"); // December 14, 2023; debugging purposes
+        // pending = 0;
+        // for(i=0; i<currentCustomers; i++)
+        //     if(strcmp(customer[i].status,"Received Order")!=0){ // bug: "strcmp" missing; strcmp(customer[i].status,"Received Order")
+        //         pending++;
+        //         printf("%s \t %s \n", customer[i].name, customer[i].status);
+        //      }
+        // printf("\n");
+
+        pending=0;
         for(i=0; i<currentCustomers; i++)
-            if((customer[i].status,"Order Received")!=0)
+            if(strcmp(customer[i].status,"Received Order")!=0)
                 pending++;
 
         switch(opt){
             case 'a':
-                if(currentCustomers<10 && pending<5)
+                if(closed){
+                    printf("Restaurant is closed.\n");
+                }
+                else if(currentCustomers<10 && pending<5)
                 {
                     order(menu, currentCustomers, customer);
                     currentCustomers ++;
                 }
                 else if(currentCustomers==10)
-                    printf("Max customers reached. Restaurant is closed.");
+                    printf("Max customers reached. Restaurant is closed.\n");
                 else 
-                    printf("Restaurant is accommodating too many customers at the moment. Please stand by.");
+                    printf("Restaurant is accommodating too many customers at the moment. Please stand by.\n");
                 break;
             case 'b':
                 pay(customer, currentCustomers);

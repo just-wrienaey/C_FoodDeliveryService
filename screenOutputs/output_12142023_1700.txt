@@ -1,0 +1,486 @@
+
+Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+a
+
+Good day customer!!
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+a
+
+
+~~~~~~~~~~~~~~~~~~~~ORDER FOOD~~~~~~~~~~~~~~~~~~~~
+
+--------------TODAY'S MENU--------------
+
+SNACK
+1100     Burger w Fries   Php 120.00 
+1200     Clubhouse        Php 95.00 
+1300     Hotdog on Bun    Php 75.00 
+
+PASTA
+2100     Spaghetti        Php 150.00 
+2200     Lasagna          Php 240.00 
+2300     Mac 'n Cheese    Php 110.00 
+
+DRINK
+3100     Coke             Php 50.00 
+3200     Iced tea         Php 45.00 
+3300     Orange Juice     Php 45.00 
+---------------------------------------- 
+Enter customer name: 
+Renee
+You are customer #1
+
+Enter the code of your order: (enter "0" when done) 
+1200
+
+Enter the code of your order: (enter "0" when done) 
+2300
+
+Enter the code of your order: (enter "0" when done) 
+3100
+----------------------------------------
+                 ORDERS                 
+----------------------------------------
+
+code     item             price 
+1200     Clubhouse        Php 95.00 
+2300     Mac 'n Cheese    Php 110.00 
+3100     Coke             Php 50.00 
+----------------------------------------
+
+Orders placed! Please proceed to payment. 
+Returning to customer menu. . .
+
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+b
+
+
+~~~~~~~~~~~~~~~~~~~~PAY BILL~~~~~~~~~~~~~~~~~~~~
+
+Enter customer number: 1
+Your total bill is 255.00
+
+Check your orders? 
+[Y] yes         [N] no
+Y
+----------------------------------------
+                 ORDERS                 
+----------------------------------------
+
+code     item             price 
+1200     Clubhouse        Php 95.00 
+2300     Mac 'n Cheese    Php 110.00 
+3100     Coke             Php 50.00 
+----------------------------------------
+
+Enter payment: 300
+Change: 45.00
+
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+d
+
+
+~~~~~~~~~~~~~~~~~~~~DISPLAY STATUS~~~~~~~~~~~~~~~~~~~~
+
+Enter customer number: 1
+Customer: Renee
+Status: Waiting
+
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+e
+Returning to main menu. . .
+Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+b
+
+Good day manager!!
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+b
+
+
+~~~~~~~~~~~~~~~~~~~~SENDING ORDERS TO CHEF~~~~~~~~~~~~~~~~~~~~
+
+1200     Clubhouse       (customer # 1)
+2300     Mac 'n Cheese   (customer # 1)
+3100     Coke    (customer # 1)
+
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+i
+Returning to main menu. . .
+Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+c
+
+Good day chef!!
+
+Choose an action below: 
+[a] receive order
+[b] cook n dishes
+[c] pack order
+[d] exit
+a
+
+
+~~~~~~~~~~~~~~~~~~~~RECEIVE ORDERS~~~~~~~~~~~~~~~~~~~~
+
+Preparing Clubhouse for customer # 1. . .
+Preparing Mac 'n Cheese for customer # 1. . .
+Preparing Coke for customer # 1. . .
+
+
+Choose an action below: 
+[a] receive order
+[b] cook n dishes
+[c] pack order
+[d] exit
+d
+Returning to main menu. . .
+Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+b
+
+Good day manager!!
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+c
+
+
+~~~~~~~~~~~~~~~~~~~~PENDING ORDERS~~~~~~~~~~~~~~~~~~~~
+
+Preparing        1200    Clubhouse       (customer # 1)
+Preparing        2300    Mac 'n Cheese   (customer # 1)
+Preparing        3100    Coke            (customer # 1)
+
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+i
+Returning to main menu. . .
+Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+c
+
+Good day chef!!
+
+Choose an action below: 
+[a] receive order
+[b] cook n dishes
+[c] pack order
+[d] exit
+b
+
+
+~~~~~~~~~~~~~~~~~~~~COOK ORDERS~~~~~~~~~~~~~~~~~~~~
+
+How many dishes can you cook? 
+1
+Cooking Clubhouse for customer # 1. . .
+Finished cooking!
+
+Choose an action below: 
+[a] receive order
+[b] cook n dishes
+[c] pack order
+[d] exit
+b
+
+
+~~~~~~~~~~~~~~~~~~~~COOK ORDERS~~~~~~~~~~~~~~~~~~~~
+
+How many dishes can you cook? 
+1
+Cooking Mac 'n Cheese for customer # 1. . .
+Finished cooking!
+
+Choose an action below: 
+[a] receive order
+[b] cook n dishes
+[c] pack order
+[d] exit
+d
+Returning to main menu. . .
+Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+b
+
+Good day manager!!
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+c
+
+
+~~~~~~~~~~~~~~~~~~~~PENDING ORDERS~~~~~~~~~~~~~~~~~~~~
+
+Cooking          1200    Clubhouse       (customer # 1)
+Cooking          2300    Mac 'n Cheese   (customer # 1)
+Preparing        3100    Coke            (customer # 1)
+
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+i
+Returning to main menu. . .
+Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+c
+
+Good day chef!!
+
+Choose an action below: 
+[a] receive order
+[b] cook n dishes
+[c] pack order
+[d] exit
+b
+
+
+~~~~~~~~~~~~~~~~~~~~COOK ORDERS~~~~~~~~~~~~~~~~~~~~
+
+How many dishes can you cook? 
+3
+Cooking Coke for customer # 1. . .
+
+
+Choose an action below: 
+[a] receive order
+[b] cook n dishes
+[c] pack order
+[d] exit
+c
+
+
+~~~~~~~~~~~~~~~~~~~~PACK ORDERS~~~~~~~~~~~~~~~~~~~~
+
+Packing Clubhouse for customer # 1. . .
+Packing Mac 'n Cheese for customer # 1. . .
+Packing Coke for customer # 1. . .
+
+
+Choose an action below: 
+[a] receive order
+[b] cook n dishes
+[c] pack order
+[d] exit
+d
+Returning to main menu. . .
+Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+b
+
+Good day manager!!
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+f
+
+
+~~~~~~~~~~~~~~~~~~~~DISPLAY INCOME~~~~~~~~~~~~~~~~~~~~
+
+Transaction History: 
+Total Customers: 0       Total Income: 0.00 
+No food delivered at the moment.
+
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+e
+
+
+~~~~~~~~~~~~~~~~~~~~SEND DRIVER~~~~~~~~~~~~~~~~~~~~
+
+Driver sent. Delivering order to customer # 1 . . .
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+f
+
+
+~~~~~~~~~~~~~~~~~~~~DISPLAY INCOME~~~~~~~~~~~~~~~~~~~~
+
+Transaction History: 
+Customer # 1     Amount Paid: 255.00 
+Total Customers: 1       Total Income: 255.00 
+
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+g
+
+
+~~~~~~~~~~~~~~~~~~~~DISPLAY DISHES SERVED~~~~~~~~~~~~~~~~~~~~
+
+Received Order  Clubhouse        Delivered
+Mac 'n Cheese    Delivered
+Coke     Delivered
+
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+[1] + Done   

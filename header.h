@@ -37,7 +37,7 @@ typedef struct PendingOrders{
 
 //MANAGER ACTIONS
 
-void managerMenu(int currentCustomers, Customer customer[], Menu menu[], PendingOrders pending[]);
+bool managerMenu(int currentCustomers, Customer customer[], Menu menu[], PendingOrders pending[]);
 void displayMenu();
 void sendOrderToChef(int currentCustomers, Customer customer[], PendingOrders pending[]);
 void listPendingOrders(int currentCustomers, Customer customer[]);
@@ -59,4 +59,4 @@ void order(Menu menu[], int customerNum, Customer customer[]);
 void pay(Customer customer[], int currentCustomers);
 void displayCustomerStatus(Customer customer[], int currentCustomers);
 void displayCustomerNum(Customer customer[]);
-int customerMenu(int currentCustomers, Customer customer[], Menu menu[]);
+int customerMenu(bool closed, int currentCustomers, Customer customer[], Menu menu[]);

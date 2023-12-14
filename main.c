@@ -1,9 +1,20 @@
-// December 12, 2023 
-// 2:20pm - 9:40pm meals and breaks included approx. 5 hours (main and customer)
-// 10pm - 11pm (manager 80%) 
-// December 13, 2023
-// 12:25pm - 3:10 (Completed all functions and requirements)
-// Testing and debugging
+
+
+/*
+    PROGRESS LOG:
+
+    December 12, 2023 
+        2:20pm - 9:40pm meals and breaks included approx. 5 hours (main and customer)
+        10pm - 11pm (manager 80%) 
+
+    December 13, 2023
+        12:25pm - 3:10pm (Completed all functions and requirements)
+
+    December 14, 2023 Testing and debugging
+        2:50pm-
+
+*/
+
 
 #include "customer.c"
 
@@ -26,6 +37,7 @@ int main(){
     }
 
     int currentCustomers=0;
+    bool closed = false;
 
     PendingOrders pending[MAX_CUSTOMERS*9];
 
@@ -52,10 +64,10 @@ int main(){
 
         switch(opt){
             case 'a':
-                currentCustomers = customerMenu(currentCustomers,customer, menu);
+                currentCustomers = customerMenu(closed, currentCustomers,customer, menu);
                 break;
             case 'b':
-                managerMenu(currentCustomers, customer, menu, pending);
+                closed = managerMenu(currentCustomers, customer, menu, pending);
                 break;
             case 'c':
                 chefMenu(currentCustomers, customer, pending);

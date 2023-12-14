@@ -1,0 +1,364 @@
+//BUG: PENDING COUNTER (FIXED)
+//BUG: DISPLAY SERVED DISHES
+
+Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+a
+
+Good day customer!!
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+a
+
+PENDING COUNTER
+
+
+
+~~~~~~~~~~~~~~~~~~~~ORDER FOOD~~~~~~~~~~~~~~~~~~~~
+
+--------------TODAY'S MENU--------------
+
+SNACK
+1100     Burger w Fries   Php 120.00 
+1200     Clubhouse        Php 95.00 
+1300     Hotdog on Bun    Php 75.00 
+
+PASTA
+2100     Spaghetti        Php 150.00 
+2200     Lasagna          Php 240.00 
+2300     Mac 'n Cheese    Php 110.00 
+
+DRINK
+3100     Coke             Php 50.00 
+3200     Iced tea         Php 45.00 
+3300     Orange Juice     Php 45.00 
+---------------------------------------- 
+Enter customer name: 
+Mama
+You are customer #1
+
+Enter the code of your order: (enter "0" when done) 
+3100
+
+Enter the code of your order: (enter "0" when done) 
+0
+Order's complete!
+----------------------------------------
+                 ORDERS                 
+----------------------------------------
+
+code     item             price 
+3100     Coke             Php 50.00 
+----------------------------------------
+
+Orders placed! Please proceed to payment. 
+Returning to customer menu. . .
+
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+a
+
+PENDING COUNTER
+Mama     Booking 
+
+
+
+~~~~~~~~~~~~~~~~~~~~ORDER FOOD~~~~~~~~~~~~~~~~~~~~
+
+--------------TODAY'S MENU--------------
+
+SNACK
+1100     Burger w Fries   Php 120.00 
+1200     Clubhouse        Php 95.00 
+1300     Hotdog on Bun    Php 75.00 
+
+PASTA
+2100     Spaghetti        Php 150.00 
+2200     Lasagna          Php 240.00 
+2300     Mac 'n Cheese    Php 110.00 
+
+DRINK
+3100     Coke             Php 50.00 
+3200     Iced tea         Php 45.00 
+3300     Orange Juice     Php 45.00 
+---------------------------------------- 
+Enter customer name: 
+Papa
+You are customer #2
+
+Enter the code of your order: (enter "0" when done) 
+3300
+
+Enter the code of your order: (enter "0" when done) 
+0
+Order's complete!
+----------------------------------------
+                 ORDERS                 
+----------------------------------------
+
+code     item             price 
+3300     Orange juice     Php 45.00 
+----------------------------------------
+
+Orders placed! Please proceed to payment. 
+Returning to customer menu. . .
+
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+b
+
+PENDING COUNTER
+Mama     Booking 
+Papa     Booking 
+
+
+
+~~~~~~~~~~~~~~~~~~~~PAY BILL~~~~~~~~~~~~~~~~~~~~
+
+Enter customer number: 1
+Your total bill is 50.00
+
+Check your orders? 
+[Y] yes         [N] no
+Y
+----------------------------------------
+                 ORDERS                 
+----------------------------------------
+
+code     item             price 
+3100     Coke             Php 50.00 
+----------------------------------------
+
+Enter payment: 50
+Exact amount paid.
+
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+e
+
+PENDING COUNTER
+Mama     Waiting 
+Papa     Booking 
+
+Returning to main menu. . .
+Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+b
+
+Good day manager!!
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+b
+
+
+~~~~~~~~~~~~~~~~~~~~SENDING ORDERS TO CHEF~~~~~~~~~~~~~~~~~~~~
+
+3100     Coke    (customer # 1)
+
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+i
+Returning to main menu. . .Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+c
+
+Good day chef!!
+
+Choose an action below: 
+[a] receive order
+[b] cook n dishes
+[c] pack order
+[d] exit
+a
+
+
+~~~~~~~~~~~~~~~~~~~~RECEIVE ORDERS~~~~~~~~~~~~~~~~~~~~
+
+Preparing Coke for customer # 1. . .
+
+
+Choose an action below: 
+[a] receive order
+[b] cook n dishes
+[c] pack order
+[d] exit
+b
+
+
+~~~~~~~~~~~~~~~~~~~~COOK ORDERS~~~~~~~~~~~~~~~~~~~~
+
+How many dishes can you cook? 
+c
+Cooking Coke for customer # 1. . .
+
+
+Choose an action below: 
+[a] receive order
+[b] cook n dishes
+[c] pack order
+[d] exit
+
+
+~~~~~~~~~~~~~~~~~~~~PACK ORDERS~~~~~~~~~~~~~~~~~~~~
+
+Packing Coke for customer # 1. . .
+
+
+Choose an action below: 
+[a] receive order
+[b] cook n dishes
+[c] pack order
+[d] exit
+d
+Returning to main menu. . .Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+b
+
+Good day manager!!
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+e
+
+
+~~~~~~~~~~~~~~~~~~~~SEND DRIVER~~~~~~~~~~~~~~~~~~~~
+
+Driver sent. Delivering order to customer # 1 . . .
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+g
+
+
+~~~~~~~~~~~~~~~~~~~~DISPLAY DISHES SERVED~~~~~~~~~~~~~~~~~~~~
+
+
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+i
+Returning to main menu. . .Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+a
+
+Good day customer!!
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+d
+
+PENDING COUNTER
+Papa     Booking 
+
+
+
+~~~~~~~~~~~~~~~~~~~~DISPLAY STATUS~~~~~~~~~~~~~~~~~~~~
+
+Enter customer number: 1
+Customer: Mama
+Status: Received Order
+
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+[1] + Done             

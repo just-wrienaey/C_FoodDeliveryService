@@ -1,0 +1,723 @@
+//BUG: PENDING COUNTER
+
+Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+a
+
+Good day customer!!
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+a
+
+
+~~~~~~~~~~~~~~~~~~~~ORDER FOOD~~~~~~~~~~~~~~~~~~~~
+
+--------------TODAY'S MENU--------------
+
+SNACK
+1100     Burger w Fries   Php 120.00 
+1200     Clubhouse        Php 95.00 
+1300     Hotdog on Bun    Php 75.00 
+
+PASTA
+2100     Spaghetti        Php 150.00 
+2200     Lasagna          Php 240.00 
+2300     Mac 'n Cheese    Php 110.00 
+
+DRINK
+3100     Coke             Php 50.00 
+3200     Iced tea         Php 45.00 
+3300     Orange Juice     Php 45.00 
+---------------------------------------- 
+Enter customer name: 
+Mama
+You are customer #1
+
+Enter the code of your order: (enter "0" when done) 
+3100
+
+Enter the code of your order: (enter "0" when done) 
+2200
+
+Enter the code of your order: (enter "0" when done) 
+1100
+----------------------------------------
+                 ORDERS                 
+----------------------------------------
+
+code     item             price 
+3100     Coke             Php 50.00 
+2200     Lasagna          Php 240.00 
+1100     Burger w Fries   Php 120.00 
+----------------------------------------
+
+Orders placed! Please proceed to payment. 
+Returning to customer menu. . .
+
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+d
+
+
+~~~~~~~~~~~~~~~~~~~~DISPLAY STATUS~~~~~~~~~~~~~~~~~~~~
+
+Enter customer number: 1
+Customer: Mama
+Status: Booking
+
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+c
+
+
+~~~~~~~~~~~~~~~~~~~~DISPLAY NUMBER~~~~~~~~~~~~~~~~~~~~
+
+Enter your name: Mama
+You are customer #1
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+b
+
+
+~~~~~~~~~~~~~~~~~~~~PAY BILL~~~~~~~~~~~~~~~~~~~~
+
+Enter customer number: 1
+Your total bill is 410.00
+
+Check your orders? 
+[Y] yes         [N] no
+Y
+----------------------------------------
+                 ORDERS                 
+----------------------------------------
+
+code     item             price 
+3100     Coke             Php 50.00 
+2200     Lasagna          Php 240.00 
+1100     Burger w Fries   Php 120.00 
+----------------------------------------
+
+Enter payment: 0
+PAYMENT NOT ACCEPTED. Please pay the exact amount! 
+Enter payment: 500
+Change: 90.00
+
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+d
+
+
+~~~~~~~~~~~~~~~~~~~~DISPLAY STATUS~~~~~~~~~~~~~~~~~~~~
+
+Enter customer number: 1
+Customer: Mama
+Status: Waiting
+
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+e
+Returning to main menu. . .
+Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+b
+
+Good day manager!!
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+c
+
+
+~~~~~~~~~~~~~~~~~~~~PENDING ORDERS~~~~~~~~~~~~~~~~~~~~
+
+Pending          3100    Coke            (customer # 1)
+Pending          2200    Lasagna         (customer # 1)
+Pending          1100    Burger w Fries          (customer # 1)
+
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+b
+
+
+~~~~~~~~~~~~~~~~~~~~SENDING ORDERS TO CHEF~~~~~~~~~~~~~~~~~~~~
+
+3100     Coke    (customer # 1)
+2200     Lasagna         (customer # 1)
+1100     Burger w Fries          (customer # 1)
+
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+c
+
+
+~~~~~~~~~~~~~~~~~~~~PENDING ORDERS~~~~~~~~~~~~~~~~~~~~
+
+Sent to chef     3100    Coke            (customer # 1)
+Sent to chef     2200    Lasagna         (customer # 1)
+Sent to chef     1100    Burger w Fries          (customer # 1)
+
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+b
+
+
+~~~~~~~~~~~~~~~~~~~~SENDING ORDERS TO CHEF~~~~~~~~~~~~~~~~~~~~
+
+No orders to send at the moment
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+i
+Returning to main menu. . .Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+c
+
+Good day chef!!
+
+Choose an action below: 
+[a] receive order
+[b] cook n dishes
+[c] pack order
+[d] exit
+a
+
+
+~~~~~~~~~~~~~~~~~~~~RECEIVE ORDERS~~~~~~~~~~~~~~~~~~~~
+
+Preparing Coke for customer # 1. . .
+Preparing Lasagna for customer # 1. . .
+Preparing Burger w Fries for customer # 1. . .
+
+
+Choose an action below: 
+[a] receive order
+[b] cook n dishes
+[c] pack order
+[d] exit
+b
+
+
+~~~~~~~~~~~~~~~~~~~~COOK ORDERS~~~~~~~~~~~~~~~~~~~~
+
+How many dishes can you cook? 
+2
+Cooking Coke for customer # 1. . .
+Cooking Lasagna for customer # 1. . .
+Finished cooking!
+
+Choose an action below: 
+[a] receive order
+[b] cook n dishes
+[c] pack order
+[d] exit
+b
+
+
+~~~~~~~~~~~~~~~~~~~~COOK ORDERS~~~~~~~~~~~~~~~~~~~~
+
+How many dishes can you cook? 
+3
+Cooking Burger w Fries for customer # 1. . .
+
+
+Choose an action below: 
+[a] receive order
+[b] cook n dishes
+[c] pack order
+[d] exit
+d
+Returning to main menu. . .Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+b
+
+Good day manager!!
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+c
+
+
+~~~~~~~~~~~~~~~~~~~~PENDING ORDERS~~~~~~~~~~~~~~~~~~~~
+
+Cooking          3100    Coke            (customer # 1)
+Cooking          2200    Lasagna         (customer # 1)
+Cooking          1100    Burger w Fries          (customer # 1)
+
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+i
+Returning to main menu. . .Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+c
+
+Good day chef!!
+
+Choose an action below: 
+[a] receive order
+[b] cook n dishes
+[c] pack order
+[d] exit
+c
+
+
+~~~~~~~~~~~~~~~~~~~~PACK ORDERS~~~~~~~~~~~~~~~~~~~~
+
+Packing Coke for customer # 1. . .
+Packing Lasagna for customer # 1. . .
+Packing Burger w Fries for customer # 1. . .
+
+
+Choose an action below: 
+[a] receive order
+[b] cook n dishes
+[c] pack order
+[d] exit
+d
+Returning to main menu. . .Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+a
+
+Good day customer!!
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+d
+
+
+~~~~~~~~~~~~~~~~~~~~DISPLAY STATUS~~~~~~~~~~~~~~~~~~~~
+
+Enter customer number: 1
+Customer: Mama
+Status: Order is on the way!
+
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+e
+Returning to main menu. . .
+Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+b
+
+Good day manager!!
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+e
+
+
+~~~~~~~~~~~~~~~~~~~~SEND DRIVER~~~~~~~~~~~~~~~~~~~~
+
+Driver sent. Delivering order to customer # 1 . . .
+
+Choose an action below: 
+[a] display menu of the day
+[b] send order to chef
+[c] list pending orders
+[d] list current customers and ordered food
+[e] send driver to deliver food
+[f] display income for the day
+[g] display dishes served for the day
+[h] close restaurant
+[i] exit
+i
+Returning to main menu. . .Welcome to Renee's Food Deliver Service!
+
+
+Choose your role below:
+[a] Customer
+[b] Manager
+[c] Chef
+[d] Exit
+a
+
+Good day customer!!
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+d
+
+
+~~~~~~~~~~~~~~~~~~~~DISPLAY STATUS~~~~~~~~~~~~~~~~~~~~
+
+Enter customer number: 1
+Customer: Mama
+Status: Received Order
+
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+a
+
+
+~~~~~~~~~~~~~~~~~~~~ORDER FOOD~~~~~~~~~~~~~~~~~~~~
+
+--------------TODAY'S MENU--------------
+
+SNACK
+1100     Burger w Fries   Php 120.00 
+1200     Clubhouse        Php 95.00 
+1300     Hotdog on Bun    Php 75.00 
+
+PASTA
+2100     Spaghetti        Php 150.00 
+2200     Lasagna          Php 240.00 
+2300     Mac 'n Cheese    Php 110.00 
+
+DRINK
+3100     Coke             Php 50.00 
+3200     Iced tea         Php 45.00 
+3300     Orange Juice     Php 45.00 
+---------------------------------------- 
+Enter customer name: 
+Taehyung
+You are customer #2
+
+Enter the code of your order: (enter "0" when done) 
+3100
+
+Enter the code of your order: (enter "0" when done) 
+0
+Order's complete!
+----------------------------------------
+                 ORDERS                 
+----------------------------------------
+
+code     item             price 
+3100     Coke             Php 50.00 
+----------------------------------------
+
+Orders placed! Please proceed to payment. 
+Returning to customer menu. . .
+
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+a
+
+
+~~~~~~~~~~~~~~~~~~~~ORDER FOOD~~~~~~~~~~~~~~~~~~~~
+
+--------------TODAY'S MENU--------------
+
+SNACK
+1100     Burger w Fries   Php 120.00 
+1200     Clubhouse        Php 95.00 
+1300     Hotdog on Bun    Php 75.00 
+
+PASTA
+2100     Spaghetti        Php 150.00 
+2200     Lasagna          Php 240.00 
+2300     Mac 'n Cheese    Php 110.00 
+
+DRINK
+3100     Coke             Php 50.00 
+3200     Iced tea         Php 45.00 
+3300     Orange Juice     Php 45.00 
+---------------------------------------- 
+Enter customer name: 
+Hobi
+You are customer #3
+
+Enter the code of your order: (enter "0" when done) 
+3200
+
+Enter the code of your order: (enter "0" when done) 
+2200
+
+Enter the code of your order: (enter "0" when done) 
+1100
+----------------------------------------
+                 ORDERS                 
+----------------------------------------
+
+code     item             price 
+3200     Iced tea         Php 45.00 
+2200     Lasagna          Php 240.00 
+1100     Burger w Fries   Php 120.00 
+----------------------------------------
+
+Orders placed! Please proceed to payment. 
+Returning to customer menu. . .
+
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+a
+
+
+~~~~~~~~~~~~~~~~~~~~ORDER FOOD~~~~~~~~~~~~~~~~~~~~
+
+--------------TODAY'S MENU--------------
+
+SNACK
+1100     Burger w Fries   Php 120.00 
+1200     Clubhouse        Php 95.00 
+1300     Hotdog on Bun    Php 75.00 
+
+PASTA
+2100     Spaghetti        Php 150.00 
+2200     Lasagna          Php 240.00 
+2300     Mac 'n Cheese    Php 110.00 
+
+DRINK
+3100     Coke             Php 50.00 
+3200     Iced tea         Php 45.00 
+3300     Orange Juice     Php 45.00 
+---------------------------------------- 
+Enter customer name: 
+PapaRB
+You are customer #4
+
+Enter the code of your order: (enter "0" when done) 
+3300
+
+Enter the code of your order: (enter "0" when done) 
+1300
+
+Enter the code of your order: (enter "0" when done) 
+1200
+----------------------------------------
+                 ORDERS                 
+----------------------------------------
+
+code     item             price 
+3300     Orange juice     Php 45.00 
+1300     Hotdog on Bun    Php 75.00 
+1200     Clubhouse        Php 95.00 
+----------------------------------------
+
+Orders placed! Please proceed to payment. 
+Returning to customer menu. . .
+
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+a
+
+
+~~~~~~~~~~~~~~~~~~~~ORDER FOOD~~~~~~~~~~~~~~~~~~~~
+
+--------------TODAY'S MENU--------------
+
+SNACK
+1100     Burger w Fries   Php 120.00 
+1200     Clubhouse        Php 95.00 
+1300     Hotdog on Bun    Php 75.00 
+
+PASTA
+2100     Spaghetti        Php 150.00 
+2200     Lasagna          Php 240.00 
+2300     Mac 'n Cheese    Php 110.00 
+
+DRINK
+3100     Coke             Php 50.00 
+3200     Iced tea         Php 45.00 
+3300     Orange Juice     Php 45.00 
+---------------------------------------- 
+Enter customer name: 
+Beatrice
+You are customer #5
+
+Enter the code of your order: (enter "0" when done) 
+3200
+
+Enter the code of your order: (enter "0" when done) 
+0
+Order's complete!
+----------------------------------------
+                 ORDERS                 
+----------------------------------------
+
+code     item             price 
+3200     Iced tea         Php 45.00 
+----------------------------------------
+
+Orders placed! Please proceed to payment. 
+Returning to customer menu. . .
+
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+a
+Restaurant is accommodating too many customers at the moment. Please stand by.
+
+Choose an action below: 
+[a] order
+[b] pay
+[c] display customer number
+[d] display order status
+[e] exit
+[1] + Done                       

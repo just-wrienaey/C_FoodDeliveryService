@@ -64,6 +64,8 @@ void sendOrderToChef(int currentCustomers, Customer customer[], PendingOrders pe
                 pending[k].code = customer[i].orders[j].code;
                 strcpy(pending[k].name, customer[i].orders[j].name);
                 pending[k].customerNum = customer[i].customerNum;
+                k++; // added: December 14, 2023 // bug fixed: only one dish is sent to chef
+                strcpy(customer[i].orders[j].status,"Sent to chef"); //added: December 14, 2023; avoid resending orders
                 found = true;
             }
 
@@ -136,6 +138,8 @@ void sendDriver(int currentCustomers, Customer customer[]){
     int i, j;
     int orderCounter, packed;
 
+    printf("\n\n%s%sSEND DRIVER%s%s\n\n", "~~~~~~~~~~", "~~~~~~~~~~", "~~~~~~~~~~","~~~~~~~~~~");
+
     for(i=0; i<currentCustomers; i++){
 
         orderCounter = 0;
@@ -145,22 +149,28 @@ void sendDriver(int currentCustomers, Customer customer[]){
 
                 if(customer[i].orders[j].code!=-1){
                     orderCounter++;
-                    if (strcmp(customer[i].orders[j].status, "Packed")==0){
+                    //printf(" %s:\t", customer[i].orders[j].name); // debugging purposes
+                    if (strcmp(customer[i].orders[j].status,"Packed")==0){
+                        //printf(" %s", customer[i].orders[j].name); // debugging purposes
                         packed++;
                     }
                 }
+
+                //printf("\n"); // debugging purposes
                     
             }
-        }
 
-        if(orderCounter == packed){
-            strcmp(customer[i].status, "Received Order");
-            printf("Driver sent. Delivering order to customer # %d . . .", customer[i].customerNum);
+            if(orderCounter == packed){ 
+                for(j=0; j<orderCounter; j++){ // Dec 14, 2023: added loop; updates order status 
+                    strcpy(customer[i].orders[j].status, "Delivered");
+                }
+                strcpy(customer[i].status, "Received Order"); // Dec 14, 2023: updated strcmp to strcpy
+                printf("Driver sent. Delivering order to customer # %d . . .", customer[i].customerNum);
+            }
+
         }
 
     }
-
-    
 
 }
 
@@ -171,6 +181,7 @@ void displayIncome(int currentCustomers, Customer customer[]){
 
     int i, paidCustomers = 0;
     float totalIncome = 0;
+    bool found=false;
 
     if(customer[0].customerNum==-1)
         printf("There are no customers yet!\n");
@@ -183,11 +194,15 @@ void displayIncome(int currentCustomers, Customer customer[]){
 
                 totalIncome += customer[i].totalBill;
                 paidCustomers++;
+                found = true;
             }
         }
 
         printf("Total Customers: %d \t Total Income: %.2f \n", paidCustomers, totalIncome);
     }
+
+    if(!found)
+        printf("No food delivered at the moment.\n");
 
 }
 
@@ -202,46 +217,49 @@ void displayDishesServed(int currentCustomers, Menu menu[], Customer customer[])
 
     for(i=0; i<currentCustomers; i++){
 
-        for(j=0; j<MAX_ORDERS; j++){
-            if(strcmp(customer[i].orders[j].status,"Packed")==0){
+        if(strcmp(customer[i].status,"Received Order")==0)
+            //printf("%s \t", customer[i].status); //debugging purposes
+            for(j=0; j<MAX_ORDERS; j++){
+                //printf("%s \t %s\n", customer[i].orders[j].name, customer[i].orders[j].status); //debugging purposes
+                if(strcmp(customer[i].orders[j].status,"Delivered")==0){ // Dec. 14, 2023 // updated Packed --> Delivered
 
-                code = customer[i].orders[j].code;
-                switch(code){
-                    case 1100:
-                        qty[1]++;
-                        break;
-                    case 1200:
-                        qty[2]++;
-                        break;
-                    case 1300:
-                        qty[3]++;
-                        break;
-                    case 2100:
-                        qty[4]++;
-                        break;
-                    case 2200:
-                        qty[5]++;
-                        break;
-                    case 2300:
-                        qty[6]++;
-                        break;
-                    case 3100:
-                        qty[7]++;
-                        break;
-                    case 3200:
-                        qty[8]++;
-                        break;
-                    case 3300:
-                        qty[9]++;
-                        break;
+                    code = customer[i].orders[j].code;
+                    switch(code){
+                        case 1100:
+                            qty[1]++;
+                            break;
+                        case 1200:
+                            qty[2]++;
+                            break;
+                        case 1300:
+                            qty[3]++;
+                            break;
+                        case 2100:
+                            qty[4]++;
+                            break;
+                        case 2200:
+                            qty[5]++;
+                            break;
+                        case 2300:
+                            qty[6]++;
+                            break;
+                        case 3100:
+                            qty[7]++;
+                            break;
+                        case 3200:
+                            qty[8]++;
+                            break;
+                        case 3300:
+                            qty[9]++;
+                            break;
 
+                    }
+                    
                 }
-                
-            }
 
+            }
+            
         }
-        
-    }
 
     for(i=0; i<9; i++){
         if(qty[i]!=0){
@@ -250,65 +268,70 @@ void displayDishesServed(int currentCustomers, Menu menu[], Customer customer[])
     }
 }
 
-int closeResto(){
+bool closeResto(){
 
     printf("\n\n~ ~ ~ RESTAURANT IS CLOSED ~ ~ ~\n\n");
-    return -1;
+    return true;
 }
 
-void managerMenu(int currentCustomers, Customer customer[], Menu menu[], PendingOrders pending[]){
+bool managerMenu(int currentCustomers, Customer customer[], Menu menu[], PendingOrders pending[]){
 
     printf("\nGood day manager!!");
 
     char opt;
 
+    bool close = false;
+
     do{
 
-    printf("\n\nChoose an action below: \n");
-    printf("[a] display menu of the day\n");
-    printf("[b] send order to chef\n");
-    printf("[c] list pending orders\n");
-    printf("[d] list current customers and ordered food\n");
-    printf("[e] send driver to deliver food\n");
-    printf("[f] display income for the day\n");
-    printf("[g] display dishes served for the day\n");
-    printf("[h] close restaurant\n");
-    printf("[i] exit\n");
+        printf("\n\nChoose an action below: \n");
+        printf("[a] display menu of the day\n");
+        printf("[b] send order to chef\n");
+        printf("[c] list pending orders\n");
+        printf("[d] list current customers and ordered food\n");
+        printf("[e] send driver to deliver food\n");
+        printf("[f] display income for the day\n");
+        printf("[g] display dishes served for the day\n");
+        printf("[h] close restaurant\n");
+        printf("[i] exit\n");
 
-    scanf(" %c", &opt);
+        scanf(" %c", &opt);
 
 
-    switch(opt){
-        case 'a':
-            displayMenu();
-            break;
-        case 'b':
-            sendOrderToChef(currentCustomers, customer, pending);
-            break;
-        case 'c':
-            listPendingOrders(currentCustomers, customer);
-            break;
-        case 'd':
-            listCurrentCustomers(currentCustomers, customer);
-            break;
-        case 'e':
-            sendDriver(currentCustomers, customer);
-            break;
-        case 'f':
-            displayIncome(currentCustomers, customer);
-            break;
-        case 'g':
-            displayDishesServed(currentCustomers, menu, customer);
-            break;
-        case 'h':
-            closeResto();
-            break;
-        case 'i':
-            printf("Returning to main menu. . .");
-            break;
-        default:
-            printf("Invalid input. Please try again.");
-    }
+        switch(opt){
+            case 'a':
+                displayMenu();
+                break;
+            case 'b':
+                sendOrderToChef(currentCustomers, customer, pending);
+                break;
+            case 'c':
+                listPendingOrders(currentCustomers, customer);
+                break;
+            case 'd':
+                listCurrentCustomers(currentCustomers, customer);
+                break;
+            case 'e':
+                sendDriver(currentCustomers, customer);
+                break;
+            case 'f':
+                displayIncome(currentCustomers, customer);
+                break;
+            case 'g':
+                displayDishesServed(currentCustomers, menu, customer);
+                break;
+            case 'h':
+                close = closeResto();
+                break;
+            case 'i':
+                printf("Returning to main menu. . .\n");
+                break;
+            default:
+                printf("Invalid input. Please try again.\n");
+        }
 
     }while( opt != 'i');
+
+    return close;
+
 }

@@ -11,7 +11,7 @@
         12:25pm - 3:10pm (Completed all functions and requirements)
 
     December 14, 2023 Testing and debugging
-        2:50pm-
+        2:50pm-5:50pm
 
 */
 

@@ -1,3 +1,5 @@
+//Created by: KHAN, Renee Althea F.
+
 // header file containing libraries, structs and function prototypes
 
 #include <stdio.h>
